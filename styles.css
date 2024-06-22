@@ -1,0 +1,172 @@
+:root {
+    --main: #43d616;
+    --sec: #679b07;
+}
+
+header, ul, li, header a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, .menu a:hover {
+    background-color: #282828;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+p, b {
+    color: #a89984;
+}
+
+kbd {
+    background-color: black;
+}
+
+a:link, a, h1, h2, h3, li {
+    color: var(--main);
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+footer, h1 {
+    text-align: center;
+}
+
+footer, h2 {
+    font-size: x-large;
+}
+
+a:visited, a:hover, a:active, span {
+    color: var(--sec);
+}
+
+nav, header {
+    background-color: #202020;
+    width: 100%;
+}
+
+img, .menu a {
+    display: block;
+}
+
+img {
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 225px;
+}
+
+.menu a {
+    padding: 10px 15px;
+}
+
+section, h1 {
+    max-width: 1024px;
+    margin: auto;
+}
+
+nav {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+header {
+    box-shadow: 1px 1px 5px 0px #85888C;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    display: inline-block;
+    color: var(--main);
+    font-size: 34px;
+    margin-left: 10px;
+}
+
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 20px 10px;
+}
+
+.hamb-line {
+    background: var(--main);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before, .hamb-line::after {
+    background: var(--main);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+.side-menu:checked~nav {
+    max-height: 100%;
+}
+
+.side-menu:checked~.hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked~.hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked~.hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* minimum 768 */
+@media (min-width: 800px) {
+    nav {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+    }
+
+    .menu li {
+        float: left;
+    }
+
+    .menu a:hover {
+        background-color: transparent;
+        color: var(--sec);
+    }
+
+    .hamb {
+        display: none;
+    }
+}
